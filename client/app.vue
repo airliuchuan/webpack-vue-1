@@ -1,5 +1,6 @@
 <template>
   <div class="text">
+    <Header></Header>
     {{text}}
     <img src="@assets/img/mo2.png" alt="">
     <test-jsx></test-jsx>
@@ -7,9 +8,11 @@
 </template>
 <script>
 import TestJsx from './views/test.jsx'
+import Header from './views/layout/header.vue'
 export default {
   components: {
-    TestJsx
+    TestJsx,
+    Header
   },
   data () {
     return {
