@@ -3,6 +3,7 @@ const webpack = require('webpack')
 const merge = require('webpack-merge')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin') // css压缩
 const baseConfig = require('./webpack.config.base')
 
 const isDev = process.env.NODE_ENV === 'development'
@@ -97,6 +98,12 @@ if (isDev) {
         output: {
           comments: false
         }
+      }),
+      new OptimizeCssAssetsPlugin({
+        assetNameRegExp: /\.css$/,
+        cssProcessor: require('cssnano'),
+        cssProcessorOptions: { discardComments: { removeAll: true } },
+        canPrint: true
       })
     ])
   })
