@@ -1,7 +1,7 @@
 export default {
   data () {
     return {
-      test: '这是用jsx语法写的vue模板'
+      test: '这是用jsx语法写的footer'
     }
   },
   render () {

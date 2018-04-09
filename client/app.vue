@@ -1,35 +1,23 @@
 <template>
   <div class="text">
     <Header></Header>
-    {{text}}
-    <img src="@assets/img/mo2.png" alt="">
-    <div><input type="text" v-model="value"></div>
-    <test-jsx></test-jsx>
+    <router-link to="/login">login</router-link>
+    <router-link to="/app">app</router-link>
+    <router-link to="/store">store</router-link>
+    <router-view></router-view>
+    <footer-jsx></footer-jsx>
   </div>
 </template>
 <script>
-import TestJsx from './views/test.jsx'
+import FooterJsx from './views/layout/footer.jsx'
 import Header from './views/layout/header.vue'
 export default {
-  provide () {
-    const data = {}
-    Object.defineProperty(data, 'value', {
-      get: () => this.value,
-      enumerable: true
-    })
-    return {
-      data
-    }
-  },
   components: {
-    TestJsx,
+    FooterJsx,
     Header
   },
   data () {
-    return {
-      text: 'abcdssdfdsfds',
-      value: '123'
-    }
+    return {}
   }
 }
 </script>
