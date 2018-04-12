@@ -15,13 +15,5 @@ export default [
     path: '/login',
     // component: Login
     component: () => import(/* webpackChunkName: "login-view" */ '../views/login/login.vue')
-  },
-  {
-    path: '/store',
-    component: () => import(/* webpackChunkName: "store-view" */ '../views/app/store.vue')
-  },
-  {
-    path: '/module',
-    component: () => import(/* webpackChunkName: "storeModules-view" */ '../views/app/storeModules.vue')
   }
 ]

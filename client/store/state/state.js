@@ -1,5 +1,6 @@
 export default {
   count: 0,
-  first: 'zhang',
-  last: 'kay'
+  articles: [],
+  user: null,
+  loading: false
 }
